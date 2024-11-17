@@ -17,6 +17,5 @@
     <exclude-pattern>*/vendor/*</exclude-pattern>
 
     <!-- Ellenőrzendő fájlok -->
-    <file>src</file>
     <file>test.php</file>
 </ruleset>

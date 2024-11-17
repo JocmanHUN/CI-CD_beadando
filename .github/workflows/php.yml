@@ -1,4 +1,4 @@
-name: PHP Composer
+name: PHP Composer CI/CD
 
 on:
   push:
@@ -32,8 +32,8 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
+    - name: Run PHP_CodeSniffer
+      run: vendor/bin/phpcs --standard=PSR12 test.php
 
-    # - name: Run test suite
-    #   run: composer run-script test
+    - name: Fix PHP_CodeSniffer issues
+      run: vendor/bin/phpcbf --standard=PSR12 test.php
