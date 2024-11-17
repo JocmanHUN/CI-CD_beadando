@@ -17,9 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: List files in working directory
-      run: ls -la
-
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
 
@@ -40,6 +37,3 @@ jobs:
 
     - name: Run PHP_CodeSniffer
       run: vendor/bin/phpcs --standard=PSR12 test.php
-
-    - name: Fix PHP_CodeSniffer issues
-      run: vendor/bin/phpcbf --standard=PSR12 test.php
