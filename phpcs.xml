@@ -6,16 +6,36 @@
     <!-- Alapértelmezett szabvány, pl. PSR12 -->
     <rule ref="PSR12" />
 
-    <!-- Tiltott szabályok (hasonló a disable-hez) -->
+    <!-- Tiltott szabályok (kikapcsolás) -->
     <exclude name="Generic.Formatting.MultipleStatementAlignment" />
     <exclude name="Generic.Formatting.SpaceAfterCast" />
 
-    <!-- Maximális sorhossz -->
-    <config name="lineLength" value="100" />
+    <!-- Új szabályok -->
+    <rule ref="Generic.Files.LineLength">
+        <!-- Maximális sorhossz 120 karakter -->
+        <properties>
+            <property name="lineLength" value="120" />
+            <property name="absoluteLineLimit" value="140" />
+        </properties>
+    </rule>
+
+    <!-- Egyéni szabályok hozzáadása -->
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing">
+        <properties>
+            <property name="maxSpacing" value="1" />
+        </properties>
+    </rule>
 
     <!-- Fájlok kizárása (pl. vendor mappa) -->
     <exclude-pattern>*/vendor/*</exclude-pattern>
 
     <!-- Ellenőrzendő fájlok -->
     <file>test.php</file>
+    <file>functions.php</file>
+    
+    <!-- Értesítés konfigurációk -->
+    <report>
+        <property name="showProgress" value="true" />
+        <property name="fullReport" value="true" />
+    </report>
 </ruleset>
