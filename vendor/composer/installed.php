@@ -3,7 +3,7 @@
         'name' => 'your-username/ci-cd-beadando',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '7a85429d2aace9f6fe4a87d74607ffc2316d06b4',
+        'reference' => '6429bd636433aa4d4dd9d4708d5bfafbec9a5774',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'your-username/ci-cd-beadando' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '7a85429d2aace9f6fe4a87d74607ffc2316d06b4',
+            'reference' => '6429bd636433aa4d4dd9d4708d5bfafbec9a5774',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -1,7 +1,6 @@
 <?php
 
-// A minimum elvárt kódminőségi szint (küszöbérték)
-define('THRESHOLD', 7.0);
+require_once 'config.php'; // A konfigurációk betöltése
 
 // A PHP_CodeSniffer parancs futtatása és kimenetének begyűjtése
 $command = 'vendor/bin/phpcs --report=json src/';
