@@ -1,6 +1,7 @@
 <?php
 
-require_once 'config.php';
+// Minimum elvárt kódminőségi szint
+define('THRESHOLD', 9.0);
 
 // Ellenőrizzük, hogy a PHP_CodeSniffer helyesen működik
 $command = 'php vendor/bin/phpcs --report=json test.php functions.php';
@@ -30,10 +31,6 @@ $score = $maxScore - (($totalErrors * 0.5) + ($totalWarnings * 0.2));
 $score = max(0, min($score, $maxScore)); // Biztosítjuk, hogy 0 és 10 között legyen
 
 echo "Score: {$score}\n";
-
-if (!defined('THRESHOLD')) {
-    define('THRESHOLD', 7); // Minimális elfogadott pontszám
-}
 
 if ($score < THRESHOLD) {
     echo "Code quality is too low!\n";
