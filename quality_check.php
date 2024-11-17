@@ -1,9 +1,9 @@
 <?php
 
-require_once 'config.php'; // A konfigurációk betöltése
+require_once 'config.php';
 
-// A PHP_CodeSniffer parancs futtatása és kimenetének begyűjtése
-$command = 'vendor/bin/phpcs --report=json src/';
+// Ellenőrizzük, hogy a PHP_CodeSniffer helyesen működik
+$command = 'php vendor\\bin\\phpcs --report=json test.php functions.php';
 exec($command, $output, $returnVar);
 
 if ($returnVar !== 0) {
@@ -19,7 +19,6 @@ $data = json_decode($jsonOutput, true);
 $totalErrors = $data['totals']['errors'] ?? 0;
 $totalWarnings = $data['totals']['warnings'] ?? 0;
 
-// Számítsunk egy egyszerű pontszámot (példa: kevesebb hiba = magasabb pontszám)
 $maxScore = 10.0;
 $score = $maxScore - (($totalErrors * 0.5) + ($totalWarnings * 0.2));
 $score = max(0, min($score, $maxScore)); // Biztosítjuk, hogy 0 és 10 között legyen

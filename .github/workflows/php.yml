@@ -36,4 +36,7 @@ jobs:
       run: chmod +x vendor/bin/phpcs
 
     - name: Run PHP_CodeSniffer
-      run: vendor/bin/phpcs --standard=PSR12 test.php
+      run: php vendor/bin/phpcs --standard=PSR12 test.php
+
+    - name: Run Quality Check
+      run: php quality_check.php
