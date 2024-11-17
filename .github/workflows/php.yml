@@ -17,6 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: List files in working directory
+      run: ls -la
+
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
 
