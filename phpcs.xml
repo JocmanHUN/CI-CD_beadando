@@ -1,41 +1,28 @@
 <?xml version="1.0"?>
 <ruleset name="Custom PHP_CodeSniffer Ruleset">
-    <!-- Adja meg a projekt szabályainak nevét -->
     <description>Custom rules for PHP_CodeSniffer</description>
 
-    <!-- Alapértelmezett szabvány, pl. PSR12 -->
+    <!-- Alapértelmezett szabvány -->
     <rule ref="PSR12" />
 
-    <!-- Tiltott szabályok (kikapcsolás) -->
+    <!-- Tiltott szabályok -->
     <exclude name="Generic.Formatting.MultipleStatementAlignment" />
     <exclude name="Generic.Formatting.SpaceAfterCast" />
 
-    <!-- Új szabályok -->
+    <!-- Maximális sorhossz -->
     <rule ref="Generic.Files.LineLength">
-        <!-- Maximális sorhossz 120 karakter -->
         <properties>
-            <property name="lineLength" value="120" />
+            <!-- Figyelmeztetés, ha a sor hossza meghaladja a 120 karaktert -->
+            <property name="lineLimit" value="120" />
+            <!-- Hiba, ha a sor hossza meghaladja a 140 karaktert -->
             <property name="absoluteLineLimit" value="140" />
         </properties>
     </rule>
 
-    <!-- Egyéni szabályok hozzáadása -->
-    <rule ref="Generic.Functions.FunctionCallArgumentSpacing">
-        <properties>
-            <property name="maxSpacing" value="1" />
-        </properties>
-    </rule>
-
-    <!-- Fájlok kizárása (pl. vendor mappa) -->
+    <!-- Fájlok kizárása -->
     <exclude-pattern>*/vendor/*</exclude-pattern>
 
     <!-- Ellenőrzendő fájlok -->
     <file>test.php</file>
     <file>functions.php</file>
-    
-    <!-- Értesítés konfigurációk -->
-    <report>
-        <property name="showProgress" value="true" />
-        <property name="fullReport" value="true" />
-    </report>
 </ruleset>
