@@ -1,4 +1,7 @@
 {
+    "name": "your-username/ci-cd-beadando",
+    "description": "A project for demonstrating CI/CD with PHP",
+    "license": "proprietary",
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.11"
     }

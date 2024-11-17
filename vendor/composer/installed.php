@@ -1,24 +1,15 @@
 <?php return array(
     'root' => array(
-        'name' => '__root__',
+        'name' => 'your-username/ci-cd-beadando',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'e4354b2ca19468c0600f1dee129e1763efee086c',
+        'reference' => '7a85429d2aace9f6fe4a87d74607ffc2316d06b4',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => 'e4354b2ca19468c0600f1dee129e1763efee086c',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'squizlabs/php_codesniffer' => array(
             'pretty_version' => '3.11.1',
             'version' => '3.11.1.0',
@@ -27,6 +18,15 @@
             'install_path' => __DIR__ . '/../squizlabs/php_codesniffer',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'your-username/ci-cd-beadando' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '7a85429d2aace9f6fe4a87d74607ffc2316d06b4',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
     ),
 );
