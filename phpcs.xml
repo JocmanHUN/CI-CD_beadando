@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<ruleset name="Custom PHP_CodeSniffer Ruleset">
+    <!-- Adja meg a projekt szabályainak nevét -->
+    <description>Custom rules for PHP_CodeSniffer</description>
+
+    <!-- Alapértelmezett szabvány, pl. PSR12 -->
+    <rule ref="PSR12" />
+
+    <!-- Tiltott szabályok (hasonló a disable-hez) -->
+    <exclude name="Generic.Formatting.MultipleStatementAlignment" />
+    <exclude name="Generic.Formatting.SpaceAfterCast" />
+
+    <!-- Maximális sorhossz -->
+    <config name="lineLength" value="100" />
+
+    <!-- Fájlok kizárása (pl. vendor mappa) -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+
+    <!-- Ellenőrzendő fájlok -->
+    <file>src</file>
+    <file>test.php</file>
+</ruleset>
